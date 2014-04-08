@@ -1,4 +1,4 @@
 iOSNotes
 ========
 
-final project for iOS
+final project for iOS -- Jessica Wang jlw2197
