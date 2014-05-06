@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37222208191867B900F13E90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37222207191867B900F13E90 /* Foundation.framework */; };
+		3722220A191867B900F13E90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37222209191867B900F13E90 /* CoreGraphics.framework */; };
+		3722220C191867B900F13E90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3722220B191867B900F13E90 /* UIKit.framework */; };
+		37222212191867B900F13E90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37222210191867B900F13E90 /* InfoPlist.strings */; };
+		37222214191867B900F13E90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37222213191867B900F13E90 /* main.m */; };
+		37222218191867B900F13E90 /* JLWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37222217191867B900F13E90 /* JLWAppDelegate.m */; };
+		3722221B191867B900F13E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37222219191867B900F13E90 /* Main.storyboard */; };
+		3722221E191867B900F13E90 /* JLWMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722221D191867B900F13E90 /* JLWMasterViewController.m */; };
+		37222221191867B900F13E90 /* JLWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37222220191867B900F13E90 /* JLWDetailViewController.m */; };
+		37222223191867B900F13E90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37222222191867B900F13E90 /* Images.xcassets */; };
+		3722222A191867BA00F13E90 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37222229191867BA00F13E90 /* XCTest.framework */; };
+		3722222B191867BA00F13E90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37222207191867B900F13E90 /* Foundation.framework */; };
+		3722222C191867BA00F13E90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3722220B191867B900F13E90 /* UIKit.framework */; };
+		37222234191867BA00F13E90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37222232191867BA00F13E90 /* InfoPlist.strings */; };
+		37222236191867BA00F13E90 /* NoteTakr4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37222235191867BA00F13E90 /* NoteTakr4Tests.m */; };
+		3722224319187A7B00F13E90 /* JLWNoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722224219187A7B00F13E90 /* JLWNoteData.m */; };
+		3722224619187B7400F13E90 /* JLWNoteImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722224519187B7400F13E90 /* JLWNoteImage.m */; };
+		372222481918AEBF00F13E90 /* kitty cat pictures 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 372222471918AEBF00F13E90 /* kitty cat pictures 2.jpg */; };
+		3722224B19194EC400F13E90 /* JLWNoteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722224A19194EC400F13E90 /* JLWNoteDatabase.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3722222D191867BA00F13E90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372221FC191867B800F13E90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37222203191867B900F13E90;
+			remoteInfo = NoteTakr4;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37222204191867B900F13E90 /* NoteTakr4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTakr4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37222207191867B900F13E90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		37222209191867B900F13E90 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3722220B191867B900F13E90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3722220F191867B900F13E90 /* NoteTakr4-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoteTakr4-Info.plist"; sourceTree = "<group>"; };
+		37222211191867B900F13E90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37222213191867B900F13E90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37222215191867B900F13E90 /* NoteTakr4-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteTakr4-Prefix.pch"; sourceTree = "<group>"; };
+		37222216191867B900F13E90 /* JLWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLWAppDelegate.h; sourceTree = "<group>"; };
+		37222217191867B900F13E90 /* JLWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLWAppDelegate.m; sourceTree = "<group>"; };
+		3722221A191867B900F13E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3722221C191867B900F13E90 /* JLWMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLWMasterViewController.h; sourceTree = "<group>"; };
+		3722221D191867B900F13E90 /* JLWMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLWMasterViewController.m; sourceTree = "<group>"; };
+		3722221F191867B900F13E90 /* JLWDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLWDetailViewController.h; sourceTree = "<group>"; };
+		37222220191867B900F13E90 /* JLWDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLWDetailViewController.m; sourceTree = "<group>"; };
+		37222222191867B900F13E90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		37222228191867BA00F13E90 /* NoteTakr4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakr4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37222229191867BA00F13E90 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		37222231191867BA00F13E90 /* NoteTakr4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoteTakr4Tests-Info.plist"; sourceTree = "<group>"; };
+		37222233191867BA00F13E90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37222235191867BA00F13E90 /* NoteTakr4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteTakr4Tests.m; sourceTree = "<group>"; };
+		3722224119187A7B00F13E90 /* JLWNoteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLWNoteData.h; sourceTree = "<group>"; };
+		3722224219187A7B00F13E90 /* JLWNoteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLWNoteData.m; sourceTree = "<group>"; };
+		3722224419187B7400F13E90 /* JLWNoteImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLWNoteImage.h; sourceTree = "<group>"; };
+		3722224519187B7400F13E90 /* JLWNoteImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLWNoteImage.m; sourceTree = "<group>"; };
+		372222471918AEBF00F13E90 /* kitty cat pictures 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kitty cat pictures 2.jpg"; sourceTree = "<group>"; };
+		3722224919194EC400F13E90 /* JLWNoteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLWNoteDatabase.h; sourceTree = "<group>"; };
+		3722224A19194EC400F13E90 /* JLWNoteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLWNoteDatabase.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37222201191867B900F13E90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3722220A191867B900F13E90 /* CoreGraphics.framework in Frameworks */,
+				3722220C191867B900F13E90 /* UIKit.framework in Frameworks */,
+				37222208191867B900F13E90 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37222225191867BA00F13E90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3722222A191867BA00F13E90 /* XCTest.framework in Frameworks */,
+				3722222C191867BA00F13E90 /* UIKit.framework in Frameworks */,
+				3722222B191867BA00F13E90 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		372221FB191867B800F13E90 = {
+			isa = PBXGroup;
+			children = (
+				3722220D191867B900F13E90 /* NoteTakr4 */,
+				3722222F191867BA00F13E90 /* NoteTakr4Tests */,
+				37222206191867B900F13E90 /* Frameworks */,
+				37222205191867B900F13E90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37222205191867B900F13E90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37222204191867B900F13E90 /* NoteTakr4.app */,
+				37222228191867BA00F13E90 /* NoteTakr4Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37222206191867B900F13E90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37222207191867B900F13E90 /* Foundation.framework */,
+				37222209191867B900F13E90 /* CoreGraphics.framework */,
+				3722220B191867B900F13E90 /* UIKit.framework */,
+				37222229191867BA00F13E90 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3722220D191867B900F13E90 /* NoteTakr4 */ = {
+			isa = PBXGroup;
+			children = (
+				372222471918AEBF00F13E90 /* kitty cat pictures 2.jpg */,
+				372222401918693F00F13E90 /* Model */,
+				3722223F191867D400F13E90 /* UI */,
+				37222222191867B900F13E90 /* Images.xcassets */,
+				3722220E191867B900F13E90 /* Supporting Files */,
+			);
+			path = NoteTakr4;
+			sourceTree = "<group>";
+		};
+		3722220E191867B900F13E90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3722220F191867B900F13E90 /* NoteTakr4-Info.plist */,
+				37222210191867B900F13E90 /* InfoPlist.strings */,
+				37222213191867B900F13E90 /* main.m */,
+				37222215191867B900F13E90 /* NoteTakr4-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3722222F191867BA00F13E90 /* NoteTakr4Tests */ = {
+			isa = PBXGroup;
+			children = (
+				37222235191867BA00F13E90 /* NoteTakr4Tests.m */,
+				37222230191867BA00F13E90 /* Supporting Files */,
+			);
+			path = NoteTakr4Tests;
+			sourceTree = "<group>";
+		};
+		37222230191867BA00F13E90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37222231191867BA00F13E90 /* NoteTakr4Tests-Info.plist */,
+				37222232191867BA00F13E90 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3722223F191867D400F13E90 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				37222216191867B900F13E90 /* JLWAppDelegate.h */,
+				37222217191867B900F13E90 /* JLWAppDelegate.m */,
+				37222219191867B900F13E90 /* Main.storyboard */,
+				3722221C191867B900F13E90 /* JLWMasterViewController.h */,
+				3722221D191867B900F13E90 /* JLWMasterViewController.m */,
+				3722221F191867B900F13E90 /* JLWDetailViewController.h */,
+				37222220191867B900F13E90 /* JLWDetailViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		372222401918693F00F13E90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3722224119187A7B00F13E90 /* JLWNoteData.h */,
+				3722224219187A7B00F13E90 /* JLWNoteData.m */,
+				3722224419187B7400F13E90 /* JLWNoteImage.h */,
+				3722224519187B7400F13E90 /* JLWNoteImage.m */,
+				3722224919194EC400F13E90 /* JLWNoteDatabase.h */,
+				3722224A19194EC400F13E90 /* JLWNoteDatabase.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37222203191867B900F13E90 /* NoteTakr4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37222239191867BA00F13E90 /* Build configuration list for PBXNativeTarget "NoteTakr4" */;
+			buildPhases = (
+				37222200191867B900F13E90 /* Sources */,
+				37222201191867B900F13E90 /* Frameworks */,
+				37222202191867B900F13E90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoteTakr4;
+			productName = NoteTakr4;
+			productReference = 37222204191867B900F13E90 /* NoteTakr4.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37222227191867BA00F13E90 /* NoteTakr4Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3722223C191867BA00F13E90 /* Build configuration list for PBXNativeTarget "NoteTakr4Tests" */;
+			buildPhases = (
+				37222224191867BA00F13E90 /* Sources */,
+				37222225191867BA00F13E90 /* Frameworks */,
+				37222226191867BA00F13E90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3722222E191867BA00F13E90 /* PBXTargetDependency */,
+			);
+			name = NoteTakr4Tests;
+			productName = NoteTakr4Tests;
+			productReference = 37222228191867BA00F13E90 /* NoteTakr4Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		372221FC191867B800F13E90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JLW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = JWang;
+				TargetAttributes = {
+					37222227191867BA00F13E90 = {
+						TestTargetID = 37222203191867B900F13E90;
+					};
+				};
+			};
+			buildConfigurationList = 372221FF191867B900F13E90 /* Build configuration list for PBXProject "NoteTakr4" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 372221FB191867B800F13E90;
+			productRefGroup = 37222205191867B900F13E90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37222203191867B900F13E90 /* NoteTakr4 */,
+				37222227191867BA00F13E90 /* NoteTakr4Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37222202191867B900F13E90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37222223191867B900F13E90 /* Images.xcassets in Resources */,
+				372222481918AEBF00F13E90 /* kitty cat pictures 2.jpg in Resources */,
+				37222212191867B900F13E90 /* InfoPlist.strings in Resources */,
+				3722221B191867B900F13E90 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37222226191867BA00F13E90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37222234191867BA00F13E90 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37222200191867B900F13E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3722224319187A7B00F13E90 /* JLWNoteData.m in Sources */,
+				3722224619187B7400F13E90 /* JLWNoteImage.m in Sources */,
+				3722221E191867B900F13E90 /* JLWMasterViewController.m in Sources */,
+				37222218191867B900F13E90 /* JLWAppDelegate.m in Sources */,
+				3722224B19194EC400F13E90 /* JLWNoteDatabase.m in Sources */,
+				37222214191867B900F13E90 /* main.m in Sources */,
+				37222221191867B900F13E90 /* JLWDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37222224191867BA00F13E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37222236191867BA00F13E90 /* NoteTakr4Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3722222E191867BA00F13E90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37222203191867B900F13E90 /* NoteTakr4 */;
+			targetProxy = 3722222D191867BA00F13E90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37222210191867B900F13E90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37222211191867B900F13E90 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		37222219191867B900F13E90 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3722221A191867B900F13E90 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37222232191867BA00F13E90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37222233191867BA00F13E90 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37222237191867BA00F13E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37222238191867BA00F13E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3722223A191867BA00F13E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakr4/NoteTakr4-Prefix.pch";
+				INFOPLIST_FILE = "NoteTakr4/NoteTakr4-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3722223B191867BA00F13E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakr4/NoteTakr4-Prefix.pch";
+				INFOPLIST_FILE = "NoteTakr4/NoteTakr4-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3722223D191867BA00F13E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NoteTakr4.app/NoteTakr4";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakr4/NoteTakr4-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NoteTakr4Tests/NoteTakr4Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3722223E191867BA00F13E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NoteTakr4.app/NoteTakr4";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakr4/NoteTakr4-Prefix.pch";
+				INFOPLIST_FILE = "NoteTakr4Tests/NoteTakr4Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		372221FF191867B900F13E90 /* Build configuration list for PBXProject "NoteTakr4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37222237191867BA00F13E90 /* Debug */,
+				37222238191867BA00F13E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37222239191867BA00F13E90 /* Build configuration list for PBXNativeTarget "NoteTakr4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3722223A191867BA00F13E90 /* Debug */,
+				3722223B191867BA00F13E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3722223C191867BA00F13E90 /* Build configuration list for PBXNativeTarget "NoteTakr4Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3722223D191867BA00F13E90 /* Debug */,
+				3722223E191867BA00F13E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 372221FC191867B800F13E90 /* Project object */;
+}
