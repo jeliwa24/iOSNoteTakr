@@ -108,6 +108,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //[_objects removeObjectAtIndex:indexPath.row];
+        JLWNoteImage *doc = [_notes objectAtIndex:indexPath.row];
+        [doc deleteDoc];
         //delete from model:
         [_notes removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

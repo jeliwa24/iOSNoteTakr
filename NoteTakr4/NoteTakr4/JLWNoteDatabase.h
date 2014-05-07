@@ -10,4 +10,7 @@
 
 @interface JLWNoteDatabase : NSObject
 
++ (NSMutableArray *)loadJLWNotes;
++ (NSString *)nextJLWNotePath;
+
 @end

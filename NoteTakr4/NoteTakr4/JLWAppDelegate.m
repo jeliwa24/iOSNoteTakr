@@ -9,6 +9,7 @@
 #import "JLWAppDelegate.h"
 #import "JLWNoteImage.h"
 #import "JLWMasterViewController.h"
+#import "JLWNoteDatabase.h"
 
 @implementation JLWAppDelegate
 
@@ -16,15 +17,16 @@
 {
     // Override point for customization after application launch.
     
-    // TODO:  sample data
-    JLWNoteImage *note1 = [[JLWNoteImage alloc] initWithTitle:@"New Note 1" noteText:@"notess" fullImage:[UIImage imageNamed:@"kitty cate pictures 2.jpg"]];
+    // sample data
+    //JLWNoteImage *note1 = [[JLWNoteImage alloc] initWithTitle:@"New Note 1" noteText:@"notess" fullImage:[UIImage imageNamed:@"kitty cate pictures 2.jpg"]];
     
-    NSMutableArray *notes = [NSMutableArray arrayWithObjects:note1, nil];
+    //NSMutableArray *loadedNotes = [NSMutableArray arrayWithObjects:note1, nil];
 
+    NSMutableArray *loadedNotes = [JLWNoteDatabase loadJLWNotes];
     
     UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
     JLWMasterViewController *masterController = [navController.viewControllers objectAtIndex:0];
-    masterController.notes = notes;
+    masterController.notes = loadedNotes;
     
     return YES;
 }

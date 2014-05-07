@@ -11,6 +11,7 @@
 #import "JLWNoteDatabase.h"
 #define kDataKey        @"Data"
 #define kDataFile       @"data.plist"
+#define kFullImageFile  @"fullImage.jpg"
 
 @implementation JLWNoteImage
 
@@ -57,7 +58,7 @@
     
 }
 
--(JLWNoteData *) overrideData {
+-(JLWNoteData *)data {
     
     if(_data!=nil) {
         return _data;
@@ -96,6 +97,35 @@
     if (!success) {
         NSLog(@"Error removing document path: %@", error.localizedDescription);
     }
+    
+}
+
+- (void) saveImages {
+    //if (_thumbImage == nil || _fullImage == nil) return;
+    if(_fullImage == nil) return;
+    
+    [self createDataPath];
+    
+//    NSString *thumbImagePath = [_docPath stringByAppendingPathComponent:kThumbImageFile];
+//    NSData *thumbImageData = UIImagePNGRepresentation(_thumbImage);
+//    [thumbImageData writeToFile:thumbImagePath atomically:YES];
+    
+    // write image to disk
+    NSString *fullImagePath = [_docPath stringByAppendingPathComponent:kFullImageFile];
+    NSData *fullImageData = UIImagePNGRepresentation(_fullImage);
+    [fullImageData writeToFile:fullImagePath atomically:YES];
+    
+    // set cached copy to nil
+//    self.thumbImage = nil;
+    self.fullImage = nil;
+}
+
+- (UIImage *)fullImage {
+    
+    if (_fullImage != nil) return _fullImage;
+    
+    NSString *fullImagePath = [_docPath stringByAppendingPathComponent:kFullImageFile];
+    return [UIImage imageWithContentsOfFile:fullImagePath];
     
 }
 

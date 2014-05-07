@@ -62,7 +62,8 @@
     [super viewWillDisappear:animated];
     
     self.detailItem.data.noteText = self.noteTextField.text;
-
+    [_detailItem saveData];
+    
 }
 
 -(void) closeKeyboard
@@ -119,5 +120,7 @@
     self.detailItem.fullImage = fullImage;
     //self.detailItem.thumbImage = thumbImage;
     self.imageView.image = fullImage;
+    
+    [_detailItem saveImages];
 }
 @end

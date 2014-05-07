@@ -13,10 +13,10 @@ NSString *_docPath;
 
 @interface JLWNoteImage : NSObject
 
-@property (strong) JLWNoteData *data;
+@property (strong, nonatomic) JLWNoteData *data;
 
-@property (strong) UIImage *thumbImage;
-@property (strong) UIImage *fullImage;
+@property (strong, nonatomic) UIImage *thumbImage;
+@property (strong, nonatomic) UIImage *fullImage;
 
 @property (copy) NSString *docPath;
 
@@ -27,5 +27,7 @@ NSString *_docPath;
 
 - (id)initWithTitle:(NSString*)title noteText:(NSString*)noteText //thumbImage:(UIImage *)thumbImage
           fullImage:(UIImage *)fullImage;
+
+- (void) saveImages;
 
 @end
