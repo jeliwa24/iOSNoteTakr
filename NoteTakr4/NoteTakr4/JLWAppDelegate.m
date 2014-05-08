@@ -15,12 +15,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
     
     // sample data
     //JLWNoteImage *note1 = [[JLWNoteImage alloc] initWithTitle:@"New Note 1" noteText:@"notess" fullImage:[UIImage imageNamed:@"kitty cate pictures 2.jpg"]];
     
     //NSMutableArray *loadedNotes = [NSMutableArray arrayWithObjects:note1, nil];
+    
 
     NSMutableArray *loadedNotes = [JLWNoteDatabase loadJLWNotes];
     

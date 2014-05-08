@@ -26,6 +26,8 @@
 		3722224619187B7400F13E90 /* JLWNoteImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722224519187B7400F13E90 /* JLWNoteImage.m */; };
 		372222481918AEBF00F13E90 /* kitty cat pictures 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 372222471918AEBF00F13E90 /* kitty cat pictures 2.jpg */; };
 		3722224B19194EC400F13E90 /* JLWNoteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722224A19194EC400F13E90 /* JLWNoteDatabase.m */; };
+		3722224E191B1E3E00F13E90 /* JLWImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722224D191B1E3D00F13E90 /* JLWImageViewController.m */; };
+		37222250191B2B1E00F13E90 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3722224F191B2B1E00F13E90 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		372222471918AEBF00F13E90 /* kitty cat pictures 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kitty cat pictures 2.jpg"; sourceTree = "<group>"; };
 		3722224919194EC400F13E90 /* JLWNoteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLWNoteDatabase.h; sourceTree = "<group>"; };
 		3722224A19194EC400F13E90 /* JLWNoteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLWNoteDatabase.m; sourceTree = "<group>"; };
+		3722224C191B1E3D00F13E90 /* JLWImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLWImageViewController.h; sourceTree = "<group>"; };
+		3722224D191B1E3D00F13E90 /* JLWImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLWImageViewController.m; sourceTree = "<group>"; };
+		3722224F191B2B1E00F13E90 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37222250191B2B1E00F13E90 /* MessageUI.framework in Frameworks */,
 				3722220A191867B900F13E90 /* CoreGraphics.framework in Frameworks */,
 				3722220C191867B900F13E90 /* UIKit.framework in Frameworks */,
 				37222208191867B900F13E90 /* Foundation.framework in Frameworks */,
@@ -115,6 +121,7 @@
 		37222206191867B900F13E90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3722224F191B2B1E00F13E90 /* MessageUI.framework */,
 				37222207191867B900F13E90 /* Foundation.framework */,
 				37222209191867B900F13E90 /* CoreGraphics.framework */,
 				3722220B191867B900F13E90 /* UIKit.framework */,
@@ -174,6 +181,8 @@
 				3722221D191867B900F13E90 /* JLWMasterViewController.m */,
 				3722221F191867B900F13E90 /* JLWDetailViewController.h */,
 				37222220191867B900F13E90 /* JLWDetailViewController.m */,
+				3722224C191B1E3D00F13E90 /* JLWImageViewController.h */,
+				3722224D191B1E3D00F13E90 /* JLWImageViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			files = (
 				3722224319187A7B00F13E90 /* JLWNoteData.m in Sources */,
 				3722224619187B7400F13E90 /* JLWNoteImage.m in Sources */,
+				3722224E191B1E3E00F13E90 /* JLWImageViewController.m in Sources */,
 				3722221E191867B900F13E90 /* JLWMasterViewController.m in Sources */,
 				37222218191867B900F13E90 /* JLWAppDelegate.m in Sources */,
 				3722224B19194EC400F13E90 /* JLWNoteDatabase.m in Sources */,

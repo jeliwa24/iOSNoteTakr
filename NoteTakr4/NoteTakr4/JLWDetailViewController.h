@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class JLWNoteImage;
 
-@interface JLWDetailViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface JLWDetailViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) JLWNoteImage *detailItem;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
@@ -18,9 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) UIImagePickerController *picker;
 
-@property (weak, nonatomic) IBOutlet UITextField *scrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)addPictureTapped:(id)sender;
 - (IBAction)titleFieldTextChanged:(id)sender;
+- (IBAction)viewImageTapped:(id)sender;
+- (IBAction)sendEmail:(id)sender;
 
 @end
