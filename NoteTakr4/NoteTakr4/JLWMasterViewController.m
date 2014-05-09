@@ -60,12 +60,6 @@
     // go directly to detail view mode
     [self performSegueWithIdentifier:@"showDetail" sender:self];
     
-//    if (!_objects) {
-//        _objects = [[NSMutableArray alloc] init];
-//    }
-//    [_objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Table View
@@ -77,7 +71,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //return _objects.count;
     return _notes.count;
 }
 
@@ -86,15 +79,13 @@
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:@"MyCell"];
-    //NSDate *object = _objects[indexPath.row];
     JLWNoteImage *note = [self.notes objectAtIndex:indexPath.row];
 
     cell.textLabel.text = note.data.title;
+    
     // TODO: detail text should be date
     //cell.detailTextLabel.text =
     
-    //cell.imageView.image = note.thumbImage;
-
     return cell;
 }
 
@@ -107,15 +98,12 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //[_objects removeObjectAtIndex:indexPath.row];
         JLWNoteImage *doc = [_notes objectAtIndex:indexPath.row];
         [doc deleteDoc];
         //delete from model:
         [_notes removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        // if above fails, try
-        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
@@ -145,11 +133,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = _objects[indexPath.row];
-//        [[segue destinationViewController] setDetailItem:object];
-        
-        JLWDetailViewController *detailController =segue.destinationViewController;
+        JLWDetailViewController *detailController = segue.destinationViewController;
         JLWNoteImage *note = [self.notes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         detailController.detailItem = note;
     }

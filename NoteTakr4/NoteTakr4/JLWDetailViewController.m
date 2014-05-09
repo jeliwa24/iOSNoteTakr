@@ -7,7 +7,6 @@
 //
 
 #import "JLWDetailViewController.h"
-#import "JLWImageViewController.h"
 #import "JLWNoteImage.h"
 #import "JLWNoteData.h"
 #import <QuartzCore/QuartzCore.h>
@@ -21,19 +20,6 @@
 
 @synthesize picker = _picker;
 
-//-(instancetype) init {
-//    // Registering for keyboard notifications
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillAppearNotification:)
-//                                                 name:UIKeyboardWillShowNotification
-//                                               object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillDisappearNotification:)
-//                                                 name:UIKeyboardWillHideNotification
-//                                               object:nil];
-//    
-//    return self;
-//}
 
 #pragma mark - Managing the detail item
 
@@ -55,39 +41,64 @@
     if (self.detailItem) {
         //self.detailDescriptionLabel.text = [self.detailItem description];
         self.titleField.text = self.detailItem.data.title;
-        self.noteTextField.text = self.detailItem.data.noteText;
+        self.noteTextView.text = self.detailItem.data.noteText;
         self.imageView.image = self.detailItem.fullImage;
     }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    
+    [self toggleEditPhotoButtons];
+
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.scrollView setScrollEnabled:YES];
-    //[self.scrollView setContentSize:CGSizeMake(320, 800)];
-    //[self.scrollView addSubview:self.imageView];
-    //[self.scrollView addSubview:self.noteTextField];
+    [self toggleEditPhotoButtons];
 
-    //self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 500);
-    // Do any additional setup after loading the view, typically from a nib.
-    
+    CGRect scrollViewFrame = self.view.frame;
+    scrollViewFrame.size.height -= self.navigationController.navigationBar.frame.size.height;
+    scrollViewFrame.size.height -= self.toolBar.frame.size.height;
+
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 600);
+
+    // button for navigation bar
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeKeyboard)];
+    
     self.navigationItem.rightBarButtonItem = doneButton;
     
+    // buttons for toolbar
+    UIBarButtonItem *emailButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendEmail:)];
+    
+    UIBarButtonItem *takePictureButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePicture)];
+    
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+
+    self.toolBar.items = [NSArray arrayWithObjects:emailButton, space, takePictureButton, nil];
+
+    // set image to scale aspect fit
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    self.noteTextField.layer.borderWidth = 1.0f;
-    self.noteTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    // add rounded border to text view
+    [self.noteTextView.layer setBorderColor:[[[UIColor lightGrayColor] colorWithAlphaComponent:0.3] CGColor]];
+    [self.noteTextView.layer setBorderWidth:1.0];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillAppearNotification:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillDisappearNotification:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-
+    self.noteTextView.layer.cornerRadius = 5;
+    self.noteTextView.clipsToBounds = YES;
+    
+    // tried to implement shifting the scroll view up so keyboard doesn't cover up textview, but wasn't able to get it to work :(
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillAppearNotification:)
+//                                                 name:UIKeyboardWillShowNotification
+//                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillDisappearNotification:)
+//                                                 name:UIKeyboardWillHideNotification
+//                                               object:nil];
     
     [self configureView];
 }
@@ -109,36 +120,59 @@
 - (void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    self.detailItem.data.noteText = self.noteTextField.text;
+    self.detailItem.data.noteText = self.noteTextView.text;
     [_detailItem saveData];
     
 }
 
 -(void) keyboardWillAppearNotification:(NSNotification *)notification {
-    NSDictionary *dictionary = [notification userInfo];
-    CGRect keyboardFrame = [dictionary[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+
+    [self animateTextField: notification up:YES];
+
     
-    // We adjust the frame of the scroll view so that it will not be under the
-    // keyboard
-    CGRect scrollViewFrame = self.scrollView.frame;
-    scrollViewFrame.size.height -= CGRectGetHeight(keyboardFrame);
-    
-    self.scrollView.frame = scrollViewFrame;
 }
 
 -(void) keyboardWillDisappearNotification:(NSNotification *)notification {
-    // Reset the keyboard to its original position
-    self.scrollView.frame = self.view.bounds;
+
+    [self animateTextField: notification up:NO];
+
 }
 
--(void) animateTextField:(UITextField *)textField up:(BOOL)up {
+// tried to implement shifting text view so keyboard doesn't cover it up... but didn't get it to work
+-(void) animateTextField:(NSNotification *)notification up:(BOOL)up {
+    NSDictionary *userInfo = [notification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardRect;
     
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    animationDuration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    keyboardRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    CGRect originalTextViewFrame = self.noteTextView.frame;
+
+    if (up == YES) {
+        CGFloat keyboardTop = keyboardRect.origin.y;
+        CGRect newTextViewFrame = self.noteTextView.frame;
+        newTextViewFrame.size.height = keyboardTop - self.noteTextView.frame.origin.y - 10;
+        
+        self.noteTextView.frame = newTextViewFrame;
+    } else {
+        // Keyboard is going away (down) - restore original frame
+        self.noteTextView.frame = originalTextViewFrame;
+    }
+    
+    [UIView commitAnimations];
 }
 
--(void) closeKeyboard
+-(void)closeKeyboard
 {
     [self.view endEditing:YES];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,25 +191,23 @@
     [self presentViewController:_picker animated:YES completion:nil];
 }
 
+- (IBAction)viewImageTapped:(id)sender {
+    [self performSegueWithIdentifier:@"viewImage" sender:self];
+}
+
 - (IBAction)titleFieldTextChanged:(id)sender {
     self.detailItem.data.title = self.titleField.text;
 
-}
-
-- (IBAction)viewImageTapped:(id)sender {
-    [self performSegueWithIdentifier:@"viewImage" sender:self];
 }
 
 - (IBAction)sendEmail:(id)sender {
 
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     mailComposer.mailComposeDelegate = self;
-    //[mailComposer setToRecipients:[NSArray arrayWithObjects: @"support@myappworks.com",nil]];
     [mailComposer setSubject:[NSString stringWithFormat: @"Check out my note - %@",self.titleField.text]];
 
     //message body:
-    NSString *supportText = [NSString stringWithFormat:@"%@",self.noteTextField.text];
-//    supportText = [supportText stringByAppendingString: @"Please describe your problem or question."];
+    NSString *supportText = [NSString stringWithFormat:@"%@",self.noteTextView.text];
     UIImage *supportImage = self.imageView.image;
     NSData *imgData = UIImagePNGRepresentation(supportImage);
     [mailComposer setMessageBody:supportText isHTML:NO];
@@ -203,32 +235,82 @@
 #pragma mark UIImagePickerControllerDelegate
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [self toggleEditPhotoButtons];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+
+    // chosen image
     
     UIImage *fullImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
-    //UIImage *thumbImage = [fullImage imageByScalingAndCroppingForSize:CGSizeMake(44, 44)];
     self.detailItem.fullImage = fullImage;
-    //self.detailItem.thumbImage = thumbImage;
     self.imageView.image = fullImage;
     
+    //check if picture was selected
+    [self toggleEditPhotoButtons];
     [_detailItem saveImages];
 }
+
+- (void) toggleEditPhotoButtons {
+    
+    // if there is an image chosen, show edit photos buttons, otherwise don't show
+    if (!self.imageView.image) {
+        [self.changePhoto setHidden:YES];
+        [self.deletePhotoButton setHidden:YES];
+        [self.tapToAdd setHidden:NO];
+
+    }
+    else {
+        [self.changePhoto setHidden:NO];
+        [self.deletePhotoButton setHidden:NO];
+        [self.tapToAdd setHidden:YES];
+    }
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showImage"]) {
-        //        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        //        NSDate *object = _objects[indexPath.row];
-        //        [[segue destinationViewController] setDetailItem:object];
         
-        JLWImageViewController *imageController = segue.destinationViewController;
-        //JLWNoteImage *note = [self.notes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        //imageController.detailItem = note;
+        //JLWImageViewController *imageController = segue.destinationViewController;
     }
 }
+
+
+- (IBAction)deletePhoto:(id)sender {
+    self.imageView.image = (UIImage *)nil;
+    [self toggleEditPhotoButtons];
+    [_detailItem deleteImage];
+
+}
+
+- (void) takePicture {
+    // check if device has camera
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"Device has no camera"
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+    }
+    else {
+        // this should theoretically work, couldn't try it coz simulator doesn't have camera
+        
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+}
+
 @end

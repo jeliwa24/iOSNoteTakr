@@ -12,5 +12,4 @@
 
 @property (strong) NSMutableArray *notes;
 
-
 @end

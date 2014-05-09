@@ -15,15 +15,22 @@
 
 @property (strong, nonatomic) JLWNoteImage *detailItem;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
-@property (weak, nonatomic) IBOutlet UITextView *noteTextField;
+@property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *changePhoto;
+@property (weak, nonatomic) IBOutlet UIButton *tapToAdd;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIButton *deletePhotoButton;
 @property (strong, nonatomic) UIImagePickerController *picker;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)addPictureTapped:(id)sender;
 - (IBAction)titleFieldTextChanged:(id)sender;
-- (IBAction)viewImageTapped:(id)sender;
+//- (IBAction)viewImageTapped:(id)sender;
 - (IBAction)sendEmail:(id)sender;
+- (IBAction)deletePhoto:(id)sender;
+
 
 @end

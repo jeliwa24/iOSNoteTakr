@@ -102,22 +102,31 @@
 
 - (void) saveImages {
     //if (_thumbImage == nil || _fullImage == nil) return;
-    if(_fullImage == nil) return;
+    //if(_fullImage == nil) return;
     
     [self createDataPath];
     
 //    NSString *thumbImagePath = [_docPath stringByAppendingPathComponent:kThumbImageFile];
 //    NSData *thumbImageData = UIImagePNGRepresentation(_thumbImage);
 //    [thumbImageData writeToFile:thumbImagePath atomically:YES];
-    
+    NSString *fullImagePath;
     // write image to disk
-    NSString *fullImagePath = [_docPath stringByAppendingPathComponent:kFullImageFile];
+
+    fullImagePath = [_docPath stringByAppendingPathComponent:kFullImageFile];
     NSData *fullImageData = UIImagePNGRepresentation(_fullImage);
     [fullImageData writeToFile:fullImagePath atomically:YES];
     
     // set cached copy to nil
 //    self.thumbImage = nil;
     self.fullImage = nil;
+}
+
+- (void) deleteImage {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *fullImagePath = [_docPath stringByAppendingPathComponent:kFullImageFile];
+    
+    NSError *error;
+    [fileManager removeItemAtPath:fullImagePath error:&error];
 }
 
 - (UIImage *)fullImage {

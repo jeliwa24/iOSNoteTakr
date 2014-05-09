@@ -12,6 +12,7 @@
 
 @property (strong) NSString *title;
 @property (strong) NSString *noteText;
+@property (strong) NSString *dateText;
 
 - (id)initWithTitle:(NSString*)title noteText:(NSString*)noteText;
 

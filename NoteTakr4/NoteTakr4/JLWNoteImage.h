@@ -2,6 +2,8 @@
 //  JLWNoteImage.h
 //  NoteTakr4
 //
+//  This class is the note data that includes image
+//
 //  Created by Jessica Wang on 5/5/14.
 //  Copyright (c) 2014 JWang. All rights reserved.
 //
@@ -20,14 +22,14 @@ NSString *_docPath;
 
 @property (copy) NSString *docPath;
 
-- (id)init;
-- (id)initWithDocPath:(NSString *)docPath;
-- (void)saveData;
-- (void)deleteDoc;
-
-- (id)initWithTitle:(NSString*)title noteText:(NSString*)noteText //thumbImage:(UIImage *)thumbImage
+- (id) init;
+- (id) initWithDocPath:(NSString *)docPath;
+- (id) initWithTitle:(NSString*)title noteText:(NSString*)noteText
           fullImage:(UIImage *)fullImage;
 
+- (void) saveData;
+- (void) deleteDoc;
 - (void) saveImages;
+- (void) deleteImage;
 
 @end

@@ -28,7 +28,7 @@
     
     // Get private docs dir
     NSString *documentsDirectory = [JLWNoteDatabase getPrivateDocsDir];
-    NSLog(@"Loading bugs from %@", documentsDirectory);
+    NSLog(@"Loading notes from %@", documentsDirectory);
     
     // Get contents of documents directory
     NSError *error;
