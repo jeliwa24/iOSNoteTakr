@@ -81,7 +81,7 @@
                                 </connections>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aar-Rk-Q8s">
-                                <rect key="frame" x="0.0" y="111" width="322" height="480"/>
+                                <rect key="frame" x="0.0" y="111" width="322" height="446"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RCf-0M-xdT">

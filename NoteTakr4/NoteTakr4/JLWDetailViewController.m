@@ -64,7 +64,7 @@
     scrollViewFrame.size.height -= self.navigationController.navigationBar.frame.size.height;
     scrollViewFrame.size.height -= self.toolBar.frame.size.height;
 
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 600);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 500);
 
     // button for navigation bar
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeKeyboard)];
